@@ -8,10 +8,10 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  const rev = str.split('').reverse().join('');
-  return str === rev;
-
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+  return str.split('').every((word, index) => {
+    return word === str[str.length - index - 1];
+  });
 }
 
 module.exports = palindrome;
@@ -19,3 +19,7 @@ module.exports = palindrome;
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 // Each letter str.split('');
 // Each word const words = str.split(' ');
+
+// Solution 1
+/* const rev = str.split('').reverse().join('');
+return str === rev; */
