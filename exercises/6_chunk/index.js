@@ -9,16 +9,14 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  const bulk = [];
+  const bulk = []; // Fix
 
-  for (let element of array) {
-    const last = bulk[bulk.length - 1];
+  // Index
+  let index = 0; // Can change
 
-    if (!last || last.length === size) {
-      bulk.push([element]);
-    } else {
-      last.push(element);
-    }
+  while (index < array.length) {
+    bulk.push(array.slice(index, index + size));
+    index += size;
   }
 
   return bulk;
