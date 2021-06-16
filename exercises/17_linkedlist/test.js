@@ -28,7 +28,7 @@ describe('Insert First', () => {
   });
 });
 
-describe.skip('Size', () => {
+describe('Size', () => {
   it('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -40,7 +40,7 @@ describe.skip('Size', () => {
   });
 });
 
-describe.skip('GetFirst', () => {
+describe('GetFirst', () => {
   it('returns the first element', () => {
     const l = new List();
     l.insertFirst(1);
@@ -50,7 +50,7 @@ describe.skip('GetFirst', () => {
   });
 });
 
-describe.skip('GetLast', () => {
+describe('GetLast', () => {
   it('returns the last element', () => {
     const l = new List();
     l.insertFirst(2);
@@ -60,7 +60,7 @@ describe.skip('GetLast', () => {
   });
 });
 
-describe.skip('Clear', () => {
+describe('Clear', () => {
   it('empties out the list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -74,7 +74,7 @@ describe.skip('Clear', () => {
   });
 });
 
-describe.skip('RemoveFirst', () => {
+describe('RemoveFirst', () => {
   it('removes the first node when the list has a size of one', () => {
     const l = new List();
     l.insertFirst('a');
@@ -97,7 +97,7 @@ describe.skip('RemoveFirst', () => {
   });
 });
 
-describe.skip('RemoveLast', () => {
+describe('RemoveLast', () => {
   it('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
@@ -135,7 +135,7 @@ describe.skip('RemoveLast', () => {
   });
 });
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   it('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
@@ -147,8 +147,8 @@ describe.skip('InsertLast', () => {
   });
 });
 
-describe.skip('GetAt', () => {
-  test('returns the node at given index', () => {
+describe('GetAt', () => {
+  it('returns the node at given index', () => {
     const l = new List();
     expect(l.getAt(10)).toEqual(null);
 
@@ -164,8 +164,8 @@ describe.skip('GetAt', () => {
   });
 });
 
-describe.skip('RemoveAt', () => {
-  test('removeAt doesnt crash on an empty list', () => {
+describe('RemoveAt', () => {
+  it('removeAt doesnt crash on an empty list', () => {
     const l = new List();
     expect(() => {
       l.removeAt(0);
@@ -174,7 +174,7 @@ describe.skip('RemoveAt', () => {
     }).not.toThrow();
   });
 
-  test('removeAt doesnt crash on an index out of bounds', () => {
+  it('removeAt doesnt crash on an index out of bounds', () => {
     const l = new List();
     expect(() => {
       const l = new List();
@@ -183,7 +183,7 @@ describe.skip('RemoveAt', () => {
     }).not.toThrow();
   });
 
-  test('removeAt deletes the first node', () => {
+  it('removeAt deletes the first node', () => {
     const l = new List();
     l.insertLast(1);
     l.insertLast(2);
@@ -194,7 +194,7 @@ describe.skip('RemoveAt', () => {
     expect(l.getAt(0).data).toEqual(2);
   });
 
-  test('removeAt deletes the node at the given index', () => {
+  it('removeAt deletes the node at the given index', () => {
     const l = new List();
     l.insertLast(1);
     l.insertLast(2);
@@ -205,7 +205,7 @@ describe.skip('RemoveAt', () => {
     expect(l.getAt(1).data).toEqual(3);
   });
 
-  test('removeAt works on the last node', () => {
+  it('removeAt works on the last node', () => {
     const l = new List();
     l.insertLast(1);
     l.insertLast(2);
@@ -217,14 +217,14 @@ describe.skip('RemoveAt', () => {
   });
 });
 
-describe.skip('InsertAt', () => {
-  test('inserts a new node with data at the 0 index when the list is empty', () => {
+describe('InsertAt', () => {
+  it('inserts a new node with data at the 0 index when the list is empty', () => {
     const l = new List();
     l.insertAt('hi', 0);
     expect(l.getFirst().data).toEqual('hi');
   });
 
-  test('inserts a new node with data at the 0 index when the list has elements', () => {
+  it('inserts a new node with data at the 0 index when the list has elements', () => {
     const l = new List();
     l.insertLast('a');
     l.insertLast('b');
@@ -236,7 +236,7 @@ describe.skip('InsertAt', () => {
     expect(l.getAt(3).data).toEqual('c');
   });
 
-  test('inserts a new node with data at a middle index', () => {
+  it('inserts a new node with data at a middle index', () => {
     const l = new List();
     l.insertLast('a');
     l.insertLast('b');
@@ -260,7 +260,7 @@ describe.skip('InsertAt', () => {
     expect(l.getAt(2).data).toEqual('hi');
   });
 
-  test('insert a new node when index is out of bounds', () => {
+  it('insert a new node when index is out of bounds', () => {
     const l = new List();
     l.insertLast('a');
     l.insertLast('b');
@@ -272,7 +272,7 @@ describe.skip('InsertAt', () => {
   });
 });
 
-describe.skip('ForEach', () => {
+describe('ForEach', () => {
   test('applies a transform to each node', () => {
     const l = new List();
 
@@ -292,7 +292,7 @@ describe.skip('ForEach', () => {
   });
 });
 
-describe.skip('for...of loops', () => {
+describe('for...of loops', () => {
   test('works with the linked list', () => {
     const l = new List();
 

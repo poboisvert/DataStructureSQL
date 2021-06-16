@@ -23,3 +23,4 @@ How performant is an algorith is.
 - 10_pyramid to be revisited
 - 12_Matrix to be revisited
 - 17 linkedlist to be revisited
+- 21 tree reversal
