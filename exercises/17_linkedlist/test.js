@@ -2,15 +2,15 @@ const L = require('./index');
 const List = L.LinkedList;
 const Node = L.Node;
 
-test('List is a class', () => {
+it('List is a class', () => {
   expect(typeof List.prototype.constructor).toEqual('function');
 });
 
-test('Node is a class', () => {
+it('Node is a class', () => {
   expect(typeof Node.prototype.constructor).toEqual('function');
 });
 
-describe.skip('A Node', () => {
+describe('A Node', () => {
   test('has properties "data" and "next"', () => {
     const node = new Node('a', 'b');
     expect(node.data).toEqual('a');
@@ -18,8 +18,8 @@ describe.skip('A Node', () => {
   });
 });
 
-describe.skip('Insert First', () => {
-  test('appends a node to the start of the list', () => {
+describe('Insert First', () => {
+  it('appends a node to the start of the list', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.head.data).toEqual(1);
@@ -29,7 +29,7 @@ describe.skip('Insert First', () => {
 });
 
 describe.skip('Size', () => {
-  test('returns the number of items in the linked list', () => {
+  it('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
     l.insertFirst(1);
@@ -41,7 +41,7 @@ describe.skip('Size', () => {
 });
 
 describe.skip('GetFirst', () => {
-  test('returns the first element', () => {
+  it('returns the first element', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.getFirst().data).toEqual(1);
@@ -51,7 +51,7 @@ describe.skip('GetFirst', () => {
 });
 
 describe.skip('GetLast', () => {
-  test('returns the last element', () => {
+  it('returns the last element', () => {
     const l = new List();
     l.insertFirst(2);
     expect(l.getLast()).toEqual({ data: 2, next: null });
@@ -61,7 +61,7 @@ describe.skip('GetLast', () => {
 });
 
 describe.skip('Clear', () => {
-  test('empties out the list', () => {
+  it('empties out the list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
     l.insertFirst(1);
@@ -75,7 +75,7 @@ describe.skip('Clear', () => {
 });
 
 describe.skip('RemoveFirst', () => {
-  test('removes the first node when the list has a size of one', () => {
+  it('removes the first node when the list has a size of one', () => {
     const l = new List();
     l.insertFirst('a');
     l.removeFirst();
@@ -83,7 +83,7 @@ describe.skip('RemoveFirst', () => {
     expect(l.getFirst()).toEqual(null);
   });
 
-  test('removes the first node when the list has a size of three', () => {
+  it('removes the first node when the list has a size of three', () => {
     const l = new List();
     l.insertFirst('c');
     l.insertFirst('b');
@@ -98,21 +98,21 @@ describe.skip('RemoveFirst', () => {
 });
 
 describe.skip('RemoveLast', () => {
-  test('RemoveLast removes the last node when list is empty', () => {
+  it('RemoveLast removes the last node when list is empty', () => {
     const l = new List();
     expect(() => {
       l.removeLast();
     }).not.toThrow();
   });
 
-  test('RemoveLast removes the last node when list is length 1', () => {
+  it('RemoveLast removes the last node when list is length 1', () => {
     const l = new List();
     l.insertFirst('a');
     l.removeLast();
     expect(l.head).toEqual(null);
   });
 
-  test('RemoveLast removes the last node when list is length 2', () => {
+  it('RemoveLast removes the last node when list is length 2', () => {
     const l = new List();
     l.insertFirst('b');
     l.insertFirst('a');
@@ -123,7 +123,7 @@ describe.skip('RemoveLast', () => {
     expect(l.head.data).toEqual('a');
   });
 
-  test('RemoveLast removes the last node when list is length 3', () => {
+  it('RemoveLast removes the last node when list is length 3', () => {
     const l = new List();
     l.insertFirst('c');
     l.insertFirst('b');
@@ -136,7 +136,7 @@ describe.skip('RemoveLast', () => {
 });
 
 describe.skip('InsertLast', () => {
-  test('adds to the end of the list', () => {
+  it('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
 
@@ -281,7 +281,7 @@ describe.skip('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
+    l.forEach((node) => {
       node.data += 10;
     });
 
